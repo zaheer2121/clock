@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        #digital-clock {
+            font-size: 2em;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="digital-clock">Loading...</div>
+
+    <script>
+        function updateDigitalClock() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var seconds = now.getSeconds().toString().padStart(2, '0');
+            var timeString = hours + ':' + minutes + ':' + seconds;
+
+            document.getElementById('digital-clock').textContent = timeString;
+        }
+
+        setInterval(updateDigitalClock, 1000);
+        updateDigitalClock();
+    </script>
+</body>
+</html>
